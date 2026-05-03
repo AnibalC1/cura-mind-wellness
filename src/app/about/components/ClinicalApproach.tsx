@@ -70,7 +70,7 @@ export function ClinicalApproach() {
         >
           <div className="border border-gold/15 rounded-2xl p-10">
             <p className="font-cormorant text-2xl font-light text-ivory/70 leading-relaxed italic">
-              "We do not treat symptoms. We treat people — in all their complexity, history, and potential."
+              &ldquo;We do not treat symptoms. We treat people — in all their complexity, history, and potential.&rdquo;
             </p>
             <div className="gold-divider mx-auto mt-6 mb-4" />
             <p className="text-gold/50 text-xs tracking-widest uppercase">Dr. Vivian Emuobe</p>

@@ -59,7 +59,7 @@ export function ContactForm() {
         </h2>
         <div className="gold-divider mx-auto mb-6" />
         <p className="text-ivory/50 leading-relaxed font-light">
-          We've received your message and will be in touch within one business day. Your journey toward healing has begun.
+          We&rsquo;ve received your message and will be in touch within one business day. Your journey toward healing has begun.
         </p>
         <button
           onClick={() => { setSubmitted(false); setForm(INITIAL_FORM); }}

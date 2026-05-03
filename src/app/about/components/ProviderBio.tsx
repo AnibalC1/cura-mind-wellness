@@ -71,7 +71,7 @@ export function ProviderBio() {
                 With a distinguished background as former Psychiatric Programs Director at HRI Hospital in Brookline, Massachusetts, Dr. Emuobe brings both institutional leadership and deeply personal clinical care to every patient relationship. She is licensed in Texas, Massachusetts, California, Oregon, and New York — enabling her to serve patients across the country through telehealth.
               </p>
               <p>
-                Dr. Emuobe specializes in trauma-informed psychiatric care, women's mental health across the lifespan, and culturally responsive treatment that honors the full complexity of each person's identity and experience. She understands that mental health is not separate from culture, history, or lived experience — and she practices accordingly.
+                Dr. Emuobe specializes in trauma-informed psychiatric care, women&rsquo;s mental health across the lifespan, and culturally responsive treatment that honors the full complexity of each person&rsquo;s identity and experience. She understands that mental health is not separate from culture, history, or lived experience — and she practices accordingly.
               </p>
               <p>
                 At Cura Mind & Wellness, she has built a practice where clinical excellence and human warmth are not competing values — they are inseparable.

@@ -23,13 +23,13 @@ export function PhilosophySection() {
           <div className="relative inline-block">
             {/* Opening quote mark */}
             <span className="absolute -top-12 -left-8 font-cormorant text-[8rem] text-gold/10 leading-none select-none">
-              "
+              &ldquo;
             </span>
             <blockquote className="font-cormorant text-display-md font-light text-ivory/80 max-w-4xl mx-auto leading-relaxed">
               Healing begins with understanding. Transformation happens when you are truly seen, supported, and believed in.
             </blockquote>
             <span className="absolute -bottom-16 -right-8 font-cormorant text-[8rem] text-gold/10 leading-none select-none">
-              "
+              &rdquo;
             </span>
           </div>
           <motion.div

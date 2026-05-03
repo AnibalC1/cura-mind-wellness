@@ -19,7 +19,7 @@ export function ContactHero() {
           </h1>
           <div className="gold-divider mx-auto mb-8" />
           <p className="text-ivory/50 max-w-xl mx-auto text-base leading-relaxed font-light">
-            The first step is often the hardest. We're here to make it as gentle as possible. Reach out — and we'll take it from there.
+            The first step is often the hardest. We&rsquo;re here to make it as gentle as possible. Reach out — and we&rsquo;ll take it from there.
           </p>
         </motion.div>
       </div>
