@@ -45,9 +45,6 @@ export function Hero() {
         />
       </div>
 
-      {/* Subtle ambient circle */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-gold/8" />
-
       {/* Content */}
       <div className="relative z-10 container-luxury text-center">
         <motion.div
