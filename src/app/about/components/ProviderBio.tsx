@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { PROVIDER } from "@/lib/data";
 import { Award, Heart, Globe } from "lucide-react";
 
@@ -19,14 +20,15 @@ export function ProviderBio() {
           >
             <div className="relative">
               <div className="absolute -inset-3 border border-gold/10 rounded-3xl" />
-              <div className="bg-bg-elevated rounded-2xl overflow-hidden aspect-[3/4] flex items-center justify-center relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-bg-elevated via-bg-card to-bg" />
-                <div className="text-center relative z-10">
-                  <div className="w-28 h-28 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center mx-auto mb-4">
-                    <span className="font-cormorant text-4xl text-gold/40 font-light">VE</span>
-                  </div>
-                  <p className="text-ivory/20 text-xs tracking-widest">Provider Photo</p>
-                </div>
+              <div className="bg-bg-elevated rounded-2xl overflow-hidden aspect-[3/4] relative">
+                <Image
+                  src="/images/vivian-2.png"
+                  alt="Dr. Vivian Emuobe, DNP, APRN, PMHNP-BC"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
                 <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-bg to-transparent">
                   <p className="font-cormorant text-2xl font-light text-ivory">{PROVIDER.name}</p>
                   <p className="text-gold text-xs tracking-widest uppercase mt-1">{PROVIDER.credentials}</p>

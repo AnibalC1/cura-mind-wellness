@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -47,13 +48,22 @@ export function Navigation() {
       >
         <div className="container-luxury flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none group">
-            <span className="font-cormorant text-2xl font-light text-ivory tracking-wide group-hover:text-gold transition-colors duration-300">
-              Cura Mind
-            </span>
-            <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gold/70 group-hover:text-gold transition-colors duration-300">
-              & Wellness
-            </span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <Image
+              src="/images/logo.png"
+              alt="Cura Mind & Wellness"
+              width={40}
+              height={40}
+              className="opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+            />
+            <div className="flex flex-col leading-none">
+              <span className="font-cormorant text-2xl font-light text-ivory tracking-wide group-hover:text-gold transition-colors duration-300">
+                Cura Mind
+              </span>
+              <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gold/70 group-hover:text-gold transition-colors duration-300">
+                & Wellness
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

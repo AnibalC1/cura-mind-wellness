@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Award, MapPin, GraduationCap } from "lucide-react";
 import { PROVIDER } from "@/lib/data";
 
@@ -29,16 +30,15 @@ export function ProviderSpotlight() {
 
               {/* Portrait */}
               <div className="relative bg-bg-elevated rounded-2xl overflow-hidden aspect-[3/4] flex items-end">
-                {/* Gradient placeholder */}
-                <div className="absolute inset-0 bg-gradient-to-br from-bg-elevated via-bg-card to-bg" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center mx-auto mb-6">
-                      <span className="font-cormorant text-5xl text-gold/40 font-light">VE</span>
-                    </div>
-                    <p className="text-ivory/20 text-xs tracking-widest">Provider Photo</p>
-                  </div>
-                </div>
+                {/* Real provider photo */}
+                <Image
+                  src="/images/vivian-1.png"
+                  alt="Dr. Vivian Emuobe, DNP, APRN, PMHNP-BC"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
 
                 {/* Bottom overlay with name */}
                 <div className="relative z-10 w-full p-8 bg-gradient-to-t from-bg via-bg/80 to-transparent">
