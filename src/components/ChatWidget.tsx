@@ -4,19 +4,19 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, ArrowRight, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
-import {
-  getBotResponse,
-  type ChatMessage,
-  type LeadInfo,
-} from "@/lib/chatbot";
 import Link from "next/link";
 
-const INITIAL_LEAD: LeadInfo = { step: "idle" };
+interface ChatMessage {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  timestamp: Date;
+}
 
 const WELCOME_MESSAGE: ChatMessage = {
   id: "welcome",
   role: "assistant",
-  content: "Hello, I'm here to help. What brings you to Cura Mind & Wellness today?",
+  content: "Hello! I'm here to help you with any questions about our mental health and wellness services. How can I assist you today?",
   timestamp: new Date(),
 };
 
@@ -24,10 +24,10 @@ export function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([WELCOME_MESSAGE]);
   const [input, setInput] = useState("");
-  const [lead, setLead] = useState<LeadInfo>(INITIAL_LEAD);
   const [typing, setTyping] = useState(false);
   const [showAppointmentCTA, setShowAppointmentCTA] = useState(false);
   const [unread, setUnread] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -60,50 +60,65 @@ export function ChatWidget() {
     if (!text) return;
 
     setInput("");
+    setError(null);
     addMessage({ role: "user", content: text });
     setTyping(true);
 
-    // Determine next lead step based on current step
-    let nextLead = { ...lead };
+    try {
+      // Prepare messages for API (excluding system messages)
+      const apiMessages = messages
+        .filter(msg => msg.role === "user" || msg.role === "assistant")
+        .map(msg => ({
+          role: msg.role,
+          content: msg.content
+        }));
 
-    if (lead.step === "collecting_name") {
-      nextLead = { ...nextLead, name: text, step: "collecting_email" };
-    } else if (lead.step === "collecting_email") {
-      if (text.includes("@")) {
-        nextLead = { ...nextLead, email: text, step: "collecting_phone" };
+      // Add current user message
+      apiMessages.push({ role: "user", content: text });
+
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          messages: apiMessages
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`API request failed: ${response.status}`);
       }
-    } else if (lead.step === "collecting_phone") {
-      if (text.replace(/\D/g, "").length >= 10) {
-        nextLead = { ...nextLead, phone: text, step: "collecting_service" };
+
+      const data = await response.json();
+
+      setTyping(false);
+      addMessage({ role: "assistant", content: data.message });
+
+      // Check if the response suggests appointment booking
+      const appointmentKeywords = [
+        "appointment", "schedule", "book", "consultation", "contact",
+        "call", "visit", "meet", "session", "intake"
+      ];
+
+      if (appointmentKeywords.some(keyword =>
+        data.message.toLowerCase().includes(keyword) ||
+        text.toLowerCase().includes(keyword)
+      )) {
+        setShowAppointmentCTA(true);
       }
-    } else if (lead.step === "collecting_service") {
-      nextLead = { ...nextLead, service: text, step: "collecting_location" };
-    } else if (lead.step === "collecting_location") {
-      nextLead = { ...nextLead, location: text, step: "complete" };
-    }
 
-    // Simulate typing delay
-    await new Promise((r) => setTimeout(r, 600 + Math.random() * 600));
-    setTyping(false);
+    } catch (error) {
+      console.error('Chat API error:', error);
+      setTyping(false);
+      setError("I'm having trouble connecting right now. Please try again or call us directly at (617) 777-7982.");
 
-    const response = getBotResponse(text, lead, messages);
-    addMessage({ role: "assistant", content: response.message });
-
-    if (response.showAppointmentCTA) {
-      setShowAppointmentCTA(true);
-    }
-
-    if (response.startLeadCapture && lead.step === "idle") {
-      nextLead = { ...nextLead, step: "collecting_name" };
-      await new Promise((r) => setTimeout(r, 400));
       addMessage({
         role: "assistant",
-        content: "I'd be happy to help you schedule. May I have your full name?",
+        content: "I apologize, but I'm experiencing technical difficulties. Please call us at (617) 777-7982 or email info@curamw.com, and we'll be happy to assist you."
       });
     }
-
-    setLead(nextLead);
-  }, [input, lead, messages, addMessage]);
+  }, [input, messages, addMessage]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -242,14 +257,7 @@ export function ChatWidget() {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    placeholder={
-                      lead.step === "collecting_name" ? "Your full name..." :
-                      lead.step === "collecting_email" ? "Your email address..." :
-                      lead.step === "collecting_phone" ? "Your phone number..." :
-                      lead.step === "collecting_service" ? "Service or number..." :
-                      lead.step === "collecting_location" ? "Location or number..." :
-                      "Ask anything..."
-                    }
+                    placeholder="Ask anything..."
                     className="flex-1 bg-transparent text-ivory/70 placeholder:text-ivory/20 text-sm outline-none"
                   />
                   <button
