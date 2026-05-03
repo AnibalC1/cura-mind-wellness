@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Locations", href: "/locations" },
+  { label: "New Patients", href: "/new-patients" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -49,13 +50,18 @@ export function Navigation() {
         <div className="container-luxury flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <Image
-              src="/images/logo.png"
-              alt="Cura Mind & Wellness"
-              width={40}
-              height={40}
-              className="opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-            />
+            <div className="relative w-10 h-10 transition-transform duration-300 group-hover:scale-105">
+              <Image
+                src="/images/logo.png"
+                alt="Cura Mind & Wellness Logo"
+                width={40}
+                height={40}
+                className="object-contain brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  filter: 'brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(30deg) brightness(1.2)'
+                }}
+              />
+            </div>
             <div className="flex flex-col leading-none">
               <span className="font-cormorant text-2xl font-light text-ivory tracking-wide group-hover:text-gold transition-colors duration-300">
                 Cura Mind

@@ -30,14 +30,14 @@ export function ProviderSpotlight() {
 
               {/* Portrait */}
               <div className="relative bg-bg-elevated rounded-2xl overflow-hidden aspect-[3/4] flex items-end">
-                {/* Real provider photo */}
+                {/* Professional Portrait */}
                 <Image
-                  src="/images/vivian-1.png"
+                  src="/images/Vivian_Emuobe.png"
                   alt="Dr. Vivian Emuobe, DNP, APRN, PMHNP-BC"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
+                  quality={95}
                   priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
 
                 {/* Bottom overlay with name */}

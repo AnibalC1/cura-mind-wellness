@@ -21,15 +21,16 @@ export function ProviderBio() {
             <div className="relative">
               <div className="absolute -inset-3 border border-gold/10 rounded-3xl" />
               <div className="bg-bg-elevated rounded-2xl overflow-hidden aspect-[3/4] relative">
+                {/* Professional Portrait */}
                 <Image
-                  src="/images/vivian-2.png"
+                  src="/images/Vivian_Emuobe2.png"
                   alt="Dr. Vivian Emuobe, DNP, APRN, PMHNP-BC"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
+                  quality={95}
                   priority
-                  sizes="(max-width: 768px) 100vw, 40vw"
                 />
-                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-bg to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-bg via-bg/80 to-transparent">
                   <p className="font-cormorant text-2xl font-light text-ivory">{PROVIDER.name}</p>
                   <p className="text-gold text-xs tracking-widest uppercase mt-1">{PROVIDER.credentials}</p>
                 </div>

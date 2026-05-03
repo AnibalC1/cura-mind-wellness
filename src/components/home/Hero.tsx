@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 const fadeUp = {
@@ -31,8 +32,20 @@ export function Hero() {
         }}
       />
 
-      {/* Large ambient circles */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full border border-gold/5" />
+      {/* Background logo watermark */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] opacity-[0.08]">
+        <Image
+          src="/images/logo.png"
+          alt=""
+          fill
+          className="object-contain"
+          style={{
+            filter: 'brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(25deg) brightness(1.1)'
+          }}
+        />
+      </div>
+
+      {/* Subtle ambient circle */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-gold/8" />
 
       {/* Content */}
