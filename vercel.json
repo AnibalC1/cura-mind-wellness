@@ -1,15 +1,5 @@
 {
-  "name": "curamw-luxury-website",
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "env": {
-    "OPENAI_API_KEY": "@openai-api-key"
-  },
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "src/app/api/chat/route.ts": {
       "maxDuration": 30
