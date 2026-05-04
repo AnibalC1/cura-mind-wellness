@@ -50,12 +50,12 @@ export function Navigation() {
         <div className="container-luxury flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 transition-transform duration-300 group-hover:scale-105">
+            <div className="relative w-20 h-20 transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/images/logo.png"
                 alt="Cura Mind & Wellness Logo"
-                width={40}
-                height={40}
+                width={80}
+                height={80}
                 className="object-contain brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
                   filter: 'brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(30deg) brightness(1.2)'
