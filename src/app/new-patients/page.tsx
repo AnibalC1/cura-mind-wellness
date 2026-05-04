@@ -11,7 +11,8 @@ import {
   Clock,
   Phone,
   Download,
-  Mail
+  Mail,
+  ArrowRight,
 } from 'lucide-react'
 
 const fadeIn = {
@@ -61,30 +62,24 @@ const insuranceProviders = [
 export default function NewPatientsPage() {
   return (
     <main className="min-h-screen bg-bg">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-bg via-bg-card to-bg opacity-90" />
+      {/* Hero */}
+      <section className="relative pt-40 pb-24 bg-bg overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
-        <div className="container relative z-10">
+        <div className="container-luxury text-center relative z-10">
           <motion.div
             initial="initial"
             animate="animate"
             variants={fadeIn}
-            className="max-w-4xl mx-auto text-center"
           >
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gold/10 border border-gold/20 rounded-full text-gold mb-8">
-              <ClipboardList size={20} />
-              <span className="font-medium tracking-wide">New Patients</span>
-            </div>
-
-            <h1 className="heading-display text-5xl md:text-7xl mb-8">
+            <span className="label-eyebrow mb-4 inline-block">New Patients</span>
+            <h1 className="font-cormorant text-display-xl font-light text-ivory mb-6">
               Welcome to{' '}
-              <span className="bg-gradient-to-r from-gold via-gold-light to-sage bg-clip-text text-transparent">
-                Cura Mind & Wellness
-              </span>
+              <span className="italic text-gold-gradient">Cura Mind & Wellness</span>
             </h1>
-
-            <p className="text-xl text-ivory-muted leading-relaxed max-w-2xl mx-auto">
+            <div className="gold-divider mx-auto mb-6" />
+            <p className="text-ivory/50 max-w-2xl mx-auto text-base leading-relaxed font-light">
               We're honored that you're considering us for your mental health care.
               Here's everything you need to know to get started.
             </p>
@@ -93,47 +88,50 @@ export default function NewPatientsPage() {
       </section>
 
       {/* Getting Started Steps */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="heading-display text-4xl md:text-5xl text-ivory mb-6">
+      <section className="section-padding">
+        <div className="container-luxury">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <span className="label-eyebrow mb-4 inline-block">The Process</span>
+            <h2 className="font-cormorant text-display-lg font-light text-ivory mb-6">
               Getting Started is{' '}
-              <span className="bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent">
-                Simple
-              </span>
+              <span className="italic text-gold-gradient">Simple</span>
             </h2>
-            <p className="text-xl text-ivory-muted">
+            <div className="gold-divider mx-auto mb-6" />
+            <p className="text-ivory/50 max-w-xl mx-auto text-base leading-relaxed font-light">
               We've streamlined the process to make beginning your care as easy as possible.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
             {steps.map((step, index) => (
               <motion.div
                 key={step.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
+                transition={{ duration: 0.6, delay: index * 0.08 }}
               >
-                <div className="h-full p-8 bg-bg-card border border-ivory/8 rounded-2xl hover:border-gold/30 transition-all duration-300">
+                <div className="card-luxury h-full p-8 hover:bg-bg-elevated transition-all duration-500">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-gradient-to-br from-gold to-gold-light rounded-2xl flex items-center justify-center mb-4">
-                        <step.icon size={28} className="text-bg" />
+                      <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center mb-4">
+                        <step.icon size={20} className="text-gold" />
                       </div>
-                      <div className="text-center">
-                        <span className="inline-flex items-center justify-center w-8 h-8 bg-gold/20 text-gold border border-gold/30 rounded-full font-bold text-sm">
-                          {index + 1}
-                        </span>
-                      </div>
+                      <span className="font-cormorant text-2xl font-light text-gold/40 block text-center">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-medium text-ivory mb-3">
+                      <h3 className="font-dm text-xl text-ivory mb-3">
                         {step.title}
                       </h3>
-                      <p className="text-ivory-muted leading-relaxed">
+                      <p className="text-ivory/40 text-sm leading-relaxed font-light">
                         {step.description}
                       </p>
                     </div>
@@ -143,21 +141,25 @@ export default function NewPatientsPage() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-gold to-gold-light text-bg font-medium rounded-xl hover:shadow-lg hover:shadow-gold/25 transition-all duration-300"
-            >
-              <Calendar size={20} />
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-center mt-16"
+          >
+            <Link href="/contact" className="btn-primary">
+              <Calendar size={14} />
               Schedule Your First Appointment
+              <ArrowRight size={14} />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* What to Expect */}
-      <section className="py-20 bg-bg-card/50">
-        <div className="container">
+      <section className="section-padding bg-bg-card/50">
+        <div className="container-luxury">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -165,51 +167,51 @@ export default function NewPatientsPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="heading-display text-4xl md:text-5xl text-ivory mb-8">
+              <span className="label-eyebrow mb-4 inline-block">Your First Visit</span>
+              <h2 className="font-cormorant text-display-lg font-light text-ivory mb-6">
                 What to Expect at{' '}
-                <span className="bg-gradient-to-r from-gold to-sage bg-clip-text text-transparent">
-                  Your First Visit
-                </span>
+                <span className="italic text-gold-gradient">Your First Visit</span>
               </h2>
+              <div className="gold-divider mb-10" />
 
               <div className="space-y-8">
                 <div className="flex gap-6">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gold/20 border border-gold/30 rounded-xl flex items-center justify-center">
-                    <Clock size={24} className="text-gold" />
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+                    <Clock size={20} className="text-gold" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-lg text-ivory mb-2">
+                    <h3 className="font-dm text-lg text-ivory mb-2">
                       60-90 Minute Comprehensive Evaluation
                     </h3>
-                    <p className="text-ivory-muted leading-relaxed">
+                    <p className="text-ivory/40 text-sm leading-relaxed font-light">
                       Your first appointment is longer than typical follow-ups, giving us time to truly understand your story, symptoms, and goals.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex gap-6">
-                  <div className="flex-shrink-0 w-12 h-12 bg-sage/20 border border-sage/30 rounded-xl flex items-center justify-center">
-                    <User size={24} className="text-sage" />
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+                    <User size={20} className="text-gold" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-lg text-ivory mb-2">
+                    <h3 className="font-dm text-lg text-ivory mb-2">
                       One-on-One with Your Psychiatrist
                     </h3>
-                    <p className="text-ivory-muted leading-relaxed">
+                    <p className="text-ivory/40 text-sm leading-relaxed font-light">
                       You'll meet directly with our board-certified psychiatrist who will guide your care throughout your journey with us.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex gap-6">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gold/20 border border-gold/30 rounded-xl flex items-center justify-center">
-                    <CheckCircle size={24} className="text-gold" />
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+                    <CheckCircle size={20} className="text-gold" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-lg text-ivory mb-2">
+                    <h3 className="font-dm text-lg text-ivory mb-2">
                       Personalized Treatment Plan
                     </h3>
-                    <p className="text-ivory-muted leading-relaxed">
+                    <p className="text-ivory/40 text-sm leading-relaxed font-light">
                       We'll work together to create a treatment plan that aligns with your goals, lifestyle, and preferences.
                     </p>
                   </div>
@@ -222,10 +224,10 @@ export default function NewPatientsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="space-y-5"
             >
-              <div className="bg-bg-card border border-ivory/8 rounded-2xl p-8">
-                <h3 className="text-2xl font-medium text-ivory mb-6">
+              <div className="card-luxury p-8">
+                <h3 className="font-dm text-2xl text-ivory mb-6">
                   What to Bring
                 </h3>
                 <ul className="space-y-4">
@@ -237,25 +239,22 @@ export default function NewPatientsPage() {
                     'Insurance co-pay (if applicable)',
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <CheckCircle size={20} className="text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-ivory-muted">{item}</span>
+                      <CheckCircle size={18} className="text-gold/60 flex-shrink-0 mt-0.5" />
+                      <span className="text-ivory/50 text-sm font-light">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-gold/20 to-gold-light/20 border border-gold/30 rounded-2xl p-8">
-                <h3 className="text-2xl font-medium text-ivory mb-4">
+              <div className="card-luxury p-8">
+                <h3 className="font-dm text-2xl text-ivory mb-3">
                   Need Help Getting Started?
                 </h3>
-                <p className="mb-6 text-ivory-muted">
+                <p className="text-ivory/40 text-sm font-light leading-relaxed mb-6">
                   Our patient care coordinators are here to answer any questions and help you prepare for your first visit.
                 </p>
-                <a
-                  href="tel:6177777982"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-bg font-medium rounded-lg hover:bg-gold-light transition-all"
-                >
-                  <Phone size={18} />
+                <a href="tel:6177777982" className="btn-outline">
+                  <Phone size={14} />
                   Call (617) 777-7982
                 </a>
               </div>
@@ -264,50 +263,56 @@ export default function NewPatientsPage() {
         </div>
       </section>
 
-      {/* Insurance & Payment Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="heading-display text-4xl md:text-5xl text-ivory mb-6">
+      {/* Insurance & Payment */}
+      <section className="section-padding">
+        <div className="container-luxury">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <span className="label-eyebrow mb-4 inline-block">Coverage</span>
+            <h2 className="font-cormorant text-display-lg font-light text-ivory mb-6">
               Insurance &{' '}
-              <span className="bg-gradient-to-r from-gold to-sage bg-clip-text text-transparent">
-                Payment Options
-              </span>
+              <span className="italic text-gold-gradient">Payment Options</span>
             </h2>
-            <p className="text-xl text-ivory-muted">
+            <div className="gold-divider mx-auto mb-6" />
+            <p className="text-ivory/50 max-w-xl mx-auto text-base leading-relaxed font-light">
               We accept most major insurance plans and offer flexible payment options to make care accessible.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-5 max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-bg-card border border-ivory/8 rounded-2xl p-8"
+              className="card-luxury p-8"
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-gold to-gold-light rounded-2xl flex items-center justify-center mb-6">
-                <CreditCard size={28} className="text-bg" />
+              <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center mb-6">
+                <CreditCard size={20} className="text-gold" />
               </div>
-              <h3 className="text-2xl font-medium text-ivory mb-4">
+              <h3 className="font-dm text-2xl text-ivory mb-4">
                 Insurance Accepted
               </h3>
-              <p className="text-ivory-muted mb-6">
+              <p className="text-ivory/40 text-sm font-light mb-6">
                 We're in-network with most major insurance providers:
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {insuranceProviders.map((provider, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-2 text-sm text-ivory-muted"
+                    className="flex items-center gap-2 text-sm text-ivory/50 font-light"
                   >
-                    <div className="w-1.5 h-1.5 bg-gold rounded-full" />
+                    <div className="w-1 h-1 bg-gold/60 rounded-full" />
                     {provider}
                   </div>
                 ))}
               </div>
-              <p className="mt-6 text-sm text-ivory/60">
+              <p className="mt-6 text-xs text-ivory/30 italic">
                 Don't see your provider? Contact us to verify coverage.
               </p>
             </motion.div>
@@ -317,26 +322,27 @@ export default function NewPatientsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="space-y-6"
+              className="space-y-5"
             >
-              <div className="bg-bg-card border border-ivory/8 rounded-2xl p-8">
-                <h3 className="text-2xl font-medium text-ivory mb-4">Self-Pay Options</h3>
-                <p className="text-ivory-muted mb-4">
+              <div className="card-luxury p-8">
+                <h3 className="font-dm text-2xl text-ivory mb-3">Self-Pay Options</h3>
+                <p className="text-ivory/40 text-sm font-light leading-relaxed mb-4">
                   For patients without insurance or who prefer to self-pay, we offer competitive rates and flexible payment plans.
                 </p>
                 <Link
                   href="/contact"
-                  className="text-gold font-medium hover:text-gold-light transition-colors"
+                  className="inline-flex items-center gap-2 text-gold/80 hover:text-gold text-xs tracking-widest uppercase font-inter transition-colors"
                 >
-                  Contact us for pricing →
+                  Contact us for pricing
+                  <ArrowRight size={12} />
                 </Link>
               </div>
 
-              <div className="bg-bg-card border border-ivory/8 rounded-2xl p-8">
-                <h3 className="text-2xl font-medium text-ivory mb-4">
+              <div className="card-luxury p-8">
+                <h3 className="font-dm text-2xl text-ivory mb-3">
                   Financial Assistance
                 </h3>
-                <p className="text-ivory-muted">
+                <p className="text-ivory/40 text-sm font-light leading-relaxed">
                   We offer sliding scale fees and financial assistance programs for qualifying patients. No one should go without care due to cost.
                 </p>
               </div>
@@ -345,9 +351,9 @@ export default function NewPatientsPage() {
         </div>
       </section>
 
-      {/* Forms Section */}
-      <section className="py-20 bg-bg-card/50">
-        <div className="container text-center">
+      {/* Forms */}
+      <section className="section-padding bg-bg-card/50">
+        <div className="container-luxury text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -355,32 +361,26 @@ export default function NewPatientsPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="heading-display text-4xl md:text-5xl text-ivory mb-6">
+            <span className="label-eyebrow mb-4 inline-block">Paperwork</span>
+            <h2 className="font-cormorant text-display-lg font-light text-ivory mb-6">
               Patient{' '}
-              <span className="bg-gradient-to-r from-gold to-sage bg-clip-text text-transparent">
-                Forms
-              </span>
+              <span className="italic text-gold-gradient">Forms</span>
             </h2>
-            <p className="text-xl text-ivory-muted mb-8">
+            <div className="gold-divider mx-auto mb-6" />
+            <p className="text-ivory/50 text-base font-light leading-relaxed mb-10">
               Download and complete these forms before your first appointment to save time.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-bg font-medium rounded-lg hover:bg-gold-light transition-all"
-              >
-                <Download size={18} />
+              <a href="#" className="btn-primary">
+                <Download size={14} />
                 Download Intake Forms
               </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-gold/30 text-gold font-medium rounded-lg hover:border-gold/60 transition-all"
-              >
-                <Mail size={18} />
+              <Link href="/contact" className="btn-outline">
+                <Mail size={14} />
                 Request Forms by Email
               </Link>
             </div>
-            <p className="mt-6 text-sm text-ivory/60">
+            <p className="mt-6 text-xs text-ivory/30 italic">
               Forms will be sent automatically when you schedule your appointment
             </p>
           </motion.div>
