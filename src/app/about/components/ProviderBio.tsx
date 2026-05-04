@@ -23,7 +23,7 @@ export function ProviderBio() {
               <div className="bg-bg-elevated rounded-2xl overflow-hidden aspect-[3/4] relative">
                 {/* Professional Portrait */}
                 <Image
-                  src="/images/Vivian_Emuobe2.png"
+                  src="/images/vivian-2.png"
                   alt="Dr. Vivian Emuobe, DNP, APRN, PMHNP-BC"
                   fill
                   className="object-cover object-center"

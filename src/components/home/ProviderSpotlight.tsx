@@ -32,7 +32,7 @@ export function ProviderSpotlight() {
               <div className="relative bg-bg-elevated rounded-2xl overflow-hidden aspect-[3/4] flex items-end">
                 {/* Professional Portrait */}
                 <Image
-                  src="/images/Vivian_Emuobe.png"
+                  src="/images/vivian-1.png"
                   alt="Dr. Vivian Emuobe, DNP, APRN, PMHNP-BC"
                   fill
                   className="object-cover object-center"
