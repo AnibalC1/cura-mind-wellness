@@ -64,7 +64,7 @@ export function Navigation() {
               }}
             />
             <div className="flex flex-col leading-none">
-              <span className="font-dm text-xl md:text-2xl lg:text-3xl text-ivory tracking-[0.15em] group-hover:text-gold transition-colors duration-300">
+              <span className="font-cinzel font-medium text-xl md:text-2xl lg:text-3xl text-ivory tracking-[0.12em] group-hover:text-gold transition-colors duration-300">
                 CURA
               </span>
               <span className="font-inter text-[8px] md:text-[9px] tracking-[0.3em] uppercase text-gold/70 group-hover:text-gold transition-colors duration-300 mt-1">

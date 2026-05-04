@@ -34,6 +34,7 @@ const config: Config = {
         cormorant: ["var(--font-cormorant)", "Georgia", "serif"],
         dm: ["var(--font-dm-serif)", "Georgia", "serif"],
         inter: ["var(--font-inter)", "system-ui", "sans-serif"],
+        cinzel: ["var(--font-cinzel)", "Georgia", "serif"],
       },
       fontSize: {
         "display-2xl": ["clamp(3rem, 8vw, 7rem)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],

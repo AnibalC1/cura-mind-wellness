@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Serif_Display, Inter } from "next/font/google";
+import { Cormorant_Garamond, DM_Serif_Display, Inter, Cinzel } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
@@ -25,6 +25,13 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cinzel",
   display: "swap",
 });
 
@@ -63,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${dmSerif.variable} ${inter.variable}`}
+      className={`${cormorant.variable} ${dmSerif.variable} ${inter.variable} ${cinzel.variable}`}
     >
       <body className="bg-bg text-ivory-muted antialiased">
         <Navigation />

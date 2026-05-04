@@ -26,7 +26,7 @@ export function Footer() {
                 }}
               />
               <div className="flex flex-col leading-none">
-                <span className="font-dm text-3xl md:text-4xl text-ivory tracking-[0.15em]">
+                <span className="font-cinzel font-medium text-3xl md:text-4xl text-ivory tracking-[0.12em]">
                   CURA
                 </span>
                 <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gold mt-1.5">
