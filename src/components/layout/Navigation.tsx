@@ -42,16 +42,16 @@ export function Navigation() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           scrolled
-            ? "bg-bg/95 backdrop-blur-xl border-b border-ivory/5 py-4"
-            : "bg-transparent py-6"
+            ? "bg-bg/95 backdrop-blur-xl border-b border-ivory/5 py-2 md:py-4"
+            : "bg-transparent py-3 md:py-6"
         )}
       >
         <div className="container-luxury flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-2 md:gap-3 group">
             <div
               aria-hidden
-              className="w-32 h-32 bg-gold opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
+              className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 shrink-0 bg-gold opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
               style={{
                 WebkitMaskImage: "url(/images/logo.png)",
                 maskImage: "url(/images/logo.png)",
@@ -64,10 +64,10 @@ export function Navigation() {
               }}
             />
             <div className="flex flex-col leading-none">
-              <span className="font-cormorant text-2xl font-light text-ivory tracking-wide group-hover:text-gold transition-colors duration-300">
+              <span className="font-cormorant text-lg md:text-2xl font-light text-ivory tracking-wide group-hover:text-gold transition-colors duration-300">
                 Cura Mind
               </span>
-              <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gold/70 group-hover:text-gold transition-colors duration-300">
+              <span className="font-inter text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-gold/70 group-hover:text-gold transition-colors duration-300">
                 & Wellness
               </span>
             </div>

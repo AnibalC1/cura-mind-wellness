@@ -15,7 +15,7 @@ const fadeUp = {
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16 md:pt-0 md:pb-0">
       {/* Background layers */}
       <div className="absolute inset-0 bg-bg" />
 
@@ -100,7 +100,7 @@ export function Hero() {
           initial="hidden"
           animate="visible"
           variants={fadeUp}
-          className="mt-20 pt-10 border-t border-ivory/5"
+          className="mt-12 md:mt-20 pt-8 md:pt-10 border-t border-ivory/5"
         >
           <p className="text-ivory/30 text-xs tracking-[0.25em] uppercase font-inter mb-2">
             Led by
