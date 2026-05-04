@@ -20,14 +20,14 @@ const config: Config = {
           dim: "#C8BFB3",
         },
         gold: {
-          DEFAULT: "#C9A96E",
-          light: "#D9BE8A",
-          dark: "#A8863E",
+          DEFAULT: "#5DA9A7",
+          light: "#7DC4C2",
+          dark: "#3F8987",
         },
         sage: {
-          DEFAULT: "#7A9E7E",
-          light: "#9AB89E",
-          dark: "#5A7E5E",
+          DEFAULT: "#1F3B5E",
+          light: "#345578",
+          dark: "#142A47",
         },
       },
       fontFamily: {
@@ -43,8 +43,8 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-hero": "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,110,0.12) 0%, transparent 70%)",
-        "gradient-gold": "linear-gradient(135deg, #C9A96E 0%, #D9BE8A 50%, #C9A96E 100%)",
+        "gradient-hero": "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(93,169,167,0.14) 0%, transparent 70%)",
+        "gradient-gold": "linear-gradient(135deg, #5DA9A7 0%, #7DC4C2 50%, #5DA9A7 100%)",
       },
       animation: {
         "fade-up": "fadeUp 0.8s ease forwards",

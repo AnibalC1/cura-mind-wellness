@@ -27,7 +27,7 @@ export function Hero() {
       {/* Subtle texture lines */}
       <div className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 80px, #C9A96E 80px, #C9A96E 81px)",
+          backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 80px, #5DA9A7 80px, #5DA9A7 81px)",
         }}
       />
 

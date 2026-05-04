@@ -58,11 +58,11 @@
 
   .card-luxury {
     @apply bg-bg-card border border-ivory/5 rounded-2xl;
-    box-shadow: 0 0 0 1px rgba(201, 169, 110, 0.06), 0 4px 32px rgba(0,0,0,0.4);
+    box-shadow: 0 0 0 1px rgba(93, 169, 167, 0.06), 0 4px 32px rgba(0,0,0,0.4);
   }
 
   .card-luxury:hover {
-    box-shadow: 0 0 0 1px rgba(201, 169, 110, 0.15), 0 8px 48px rgba(0,0,0,0.5);
+    box-shadow: 0 0 0 1px rgba(93, 169, 167, 0.15), 0 8px 48px rgba(0,0,0,0.5);
   }
 
   .btn-primary {
@@ -73,7 +73,7 @@
   .btn-primary:hover {
     @apply bg-gold-light;
     transform: translateY(-1px);
-    box-shadow: 0 8px 32px rgba(201, 169, 110, 0.3);
+    box-shadow: 0 8px 32px rgba(93, 169, 167, 0.3);
   }
 
   .btn-outline {
@@ -87,7 +87,7 @@
   }
 
   .text-gold-gradient {
-    background: linear-gradient(135deg, #C9A96E 0%, #D9BE8A 50%, #C9A96E 100%);
+    background: linear-gradient(135deg, #5DA9A7 0%, #7DC4C2 50%, #5DA9A7 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

@@ -141,7 +141,7 @@ export function ChatWidget() {
           "hover:bg-gold-light transition-all duration-300 group",
           open ? "hidden" : "flex"
         )}
-        style={{ boxShadow: "0 8px 32px rgba(201,169,110,0.35), 0 2px 8px rgba(0,0,0,0.4)" }}
+        style={{ boxShadow: "0 8px 32px rgba(93,169,167,0.35), 0 2px 8px rgba(0,0,0,0.4)" }}
         aria-label="Open chat"
       >
         <MessageCircle size={22} className="text-bg group-hover:scale-110 transition-transform" />
@@ -162,7 +162,7 @@ export function ChatWidget() {
             style={{ maxHeight: "calc(100vh - 3rem)" }}
           >
             <div className="flex flex-col rounded-2xl overflow-hidden border border-ivory/8"
-              style={{ boxShadow: "0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,169,110,0.1)" }}
+              style={{ boxShadow: "0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(93,169,167,0.1)" }}
             >
               {/* Header */}
               <div className="bg-bg-card border-b border-ivory/8 px-5 py-4 flex items-center justify-between shrink-0">
