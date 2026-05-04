@@ -122,6 +122,12 @@ export async function POST(req: NextRequest) {
       {
         message:
           "I apologize, but I'm experiencing technical difficulties. Please call us at (617) 777-7982 or email info@curamw.com, and we'll be happy to assist you.",
+        debug: {
+          name: error?.name,
+          status: error?.status,
+          code: error?.code,
+          message: error?.message,
+        },
       },
       { status: 500 }
     )
