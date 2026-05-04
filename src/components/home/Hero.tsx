@@ -33,14 +33,12 @@ export function Hero() {
       />
 
       {/* Background logo watermark */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] opacity-[0.08]">
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] opacity-[0.08]">
         <Image
-          src="/images/logo-transparent.png"
+          src="/images/logo.png"
           alt=""
           fill
-          sizes="1200px"
           className="object-contain"
-          priority
           style={{
             filter: 'brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(25deg) brightness(1.1)'
           }}
