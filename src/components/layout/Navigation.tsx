@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -50,18 +49,20 @@ export function Navigation() {
         <div className="container-luxury flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-32 h-32 transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src="/images/logo.png"
-                alt="Cura Mind & Wellness Logo"
-                width={128}
-                height={128}
-                className="object-contain brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                style={{
-                  filter: 'brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(30deg) brightness(1.2)'
-                }}
-              />
-            </div>
+            <div
+              aria-hidden
+              className="w-32 h-32 bg-gold opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
+              style={{
+                WebkitMaskImage: "url(/images/logo.png)",
+                maskImage: "url(/images/logo.png)",
+                WebkitMaskRepeat: "no-repeat",
+                maskRepeat: "no-repeat",
+                WebkitMaskPosition: "center",
+                maskPosition: "center",
+                WebkitMaskSize: "contain",
+                maskSize: "contain",
+              }}
+            />
             <div className="flex flex-col leading-none">
               <span className="font-cormorant text-2xl font-light text-ivory tracking-wide group-hover:text-gold transition-colors duration-300">
                 Cura Mind
