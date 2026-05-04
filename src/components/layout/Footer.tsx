@@ -26,11 +26,11 @@ export function Footer() {
                 }}
               />
               <div className="flex flex-col leading-none">
-                <span className="font-cormorant text-3xl font-light text-ivory">
-                  Cura Mind
+                <span className="font-dm text-3xl md:text-4xl text-ivory tracking-[0.15em]">
+                  CURA
                 </span>
-                <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gold">
-                  & Wellness
+                <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gold mt-1.5">
+                  Mind and Wellness
                 </span>
               </div>
             </Link>

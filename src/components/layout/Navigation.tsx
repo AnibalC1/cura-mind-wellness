@@ -64,11 +64,11 @@ export function Navigation() {
               }}
             />
             <div className="flex flex-col leading-none">
-              <span className="font-cormorant text-lg md:text-2xl font-light text-ivory tracking-wide group-hover:text-gold transition-colors duration-300">
-                Cura Mind
+              <span className="font-dm text-xl md:text-2xl lg:text-3xl text-ivory tracking-[0.15em] group-hover:text-gold transition-colors duration-300">
+                CURA
               </span>
-              <span className="font-inter text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-gold/70 group-hover:text-gold transition-colors duration-300">
-                & Wellness
+              <span className="font-inter text-[8px] md:text-[9px] tracking-[0.3em] uppercase text-gold/70 group-hover:text-gold transition-colors duration-300 mt-1">
+                Mind and Wellness
               </span>
             </div>
           </Link>
