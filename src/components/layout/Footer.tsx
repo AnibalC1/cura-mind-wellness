@@ -10,13 +10,29 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6">
-              <span className="font-cormorant text-3xl font-light text-ivory block leading-none">
-                Cura Mind
-              </span>
-              <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gold">
-                & Wellness
-              </span>
+            <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
+              <div
+                aria-hidden
+                className="w-14 h-14 shrink-0 bg-gold opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  WebkitMaskImage: "url(/images/logo.png)",
+                  maskImage: "url(/images/logo.png)",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center",
+                  maskPosition: "center",
+                  WebkitMaskSize: "contain",
+                  maskSize: "contain",
+                }}
+              />
+              <div className="flex flex-col leading-none">
+                <span className="font-cormorant text-3xl font-light text-ivory">
+                  Cura Mind
+                </span>
+                <span className="font-inter text-[10px] tracking-[0.3em] uppercase text-gold">
+                  & Wellness
+                </span>
+              </div>
             </Link>
             <p className="text-ivory/50 text-sm leading-relaxed mb-8 font-light">
               Healing begins with understanding. Transformation happens when you are truly seen, supported, and believed in.
