@@ -10,14 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          DEFAULT: "#0D0F0F",
-          card: "#161A1A",
-          elevated: "#1C2020",
+          DEFAULT: "#F8F4ED",
+          card: "#FFFFFF",
+          elevated: "#EFE9DE",
         },
         ivory: {
-          DEFAULT: "#F5EFE6",
-          muted: "#E8E0D5",
-          dim: "#C8BFB3",
+          DEFAULT: "#1F3B5E",
+          muted: "#2D4870",
+          dim: "#5A6B7E",
         },
         gold: {
           DEFAULT: "#5DA9A7",
